@@ -74,7 +74,7 @@ nav ul li a:hover {
 .hero {
   position: relative;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23336699" width="1200" height="400"/><circle cx="200" cy="200" r="80" fill="%23ffffff" opacity="0.1"/><circle cx="800" cy="150" r="60" fill="%23ffffff" opacity="0.1"/><circle cx="1000" cy="250" r="70" fill="%23ffffff" opacity="0.1"/></svg>');
+    url('./images/hero.jpeg');
   background-size: cover;
   background-position: center;
   height: 50vh;
@@ -158,6 +158,7 @@ section {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .category-card:hover {
@@ -221,6 +222,7 @@ section {
 
 /* Filter */
 .filter-container {
+  display: none !important;
   text-align: center;
   margin-bottom: 30px;
 }

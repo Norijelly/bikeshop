@@ -13,6 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
     renderProductList("bestSellerList", (p) => p.type === 1);
     renderProductList("newProductList", (p) => p.type === 2);
     renderProductList("promoList", (p) => p.type === 3);
+    renderProductList("sepedaBalapList", (p) => p.category === 1);
+    renderProductList("sepedaGunungList", (p) => p.category === 2);
+    renderProductList("sepedaLipatList", (p) => p.category === 3);
+    renderProductList("sepedaListrikList", (p) => p.category === 4);
     filterProducts("all");
     document.getElementById("year").textContent = new Date().getFullYear();
   }
@@ -48,12 +52,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function createCategoryCard(category) {
-    const card = document.createElement("div");
+    const card = document.createElement("a");
     card.className = "category-card";
+    card.href = `#${toCamelCase(category.name)}`;
     card.innerHTML = `
-      <div class="category-icon">${category.name[0]}</div>
+      <div class="category-icon">${category.name[7]}</div>
       <h3>${formatName(category.name)}</h3>
-      <p>Explore various models of ${category.name.toLowerCase()}.</p>
+      <p>Explore various models of ${formatName(category.name)}.</p>
     `;
     return card;
   }
@@ -108,6 +113,10 @@ document.addEventListener("DOMContentLoaded", function () {
     return (
       "Rp. " + cleanNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
     );
+  }
+
+  function toCamelCase(str) {
+    return str.replace(/_([a-z])/g, (match, p1) => p1.toUpperCase());
   }
 
   window.filterProducts = function (label) {
