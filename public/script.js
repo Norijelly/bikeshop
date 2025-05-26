@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     card.className = "category-card";
     card.href = `#${toCamelCase(category.name)}`;
     card.innerHTML = `
-      <div class="category-icon">${category.name[7]}</div>
+      <div class="category-icon">${category.name[7].toUpperCase()}</div>
       <h3>${formatName(category.name)}</h3>
       <p>Explore various models of ${formatName(category.name)}.</p>
     `;
