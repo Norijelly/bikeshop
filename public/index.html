@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bibot Bikeshop</title>
+    <link rel="stylesheet" href="bikeshop.css" />
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#ourproducts">Our Products</a></li>
+        <li><a href="#bestseller">Best Seller</a></li>
+        <li><a href="#newproduct">New Product</a></li>
+        <li><a href="#promo">Promo</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero">
+      <div class="overlay">
+        <h1>WELCOME TO BIBOT BIKESHOP</h1>
+        <p>Get your own dream bike at here!</p>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>About Bibot Bike Shop</h2>
+      <div class="container">
+        <div class="text-box">
+          <p>
+            Welcome to Bibot Bike Shop — your one-stop destination for all
+            things cycling. Founded with a passion for two wheels and the
+            freedom they bring, our shop is dedicated to serving riders of all
+            levels. Whether you're a commuter, a weekend explorer, or a
+            competitive cyclist, we offer a carefully selected range of bikes,
+            gear, and accessories to meet your every need.
+          </p>
+          <p>
+            Our team is made up of experienced cyclists who not only sell bikes
+            but ride them too — so we understand what makes a great ride. From
+            expert repairs to personalized recommendations, we're here to keep
+            you rolling smoothly. Visit us in-store or online and discover how
+            we can help you ride better, safer, and happier.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section id="categories">
+      <h2 class="main-title">BIKE CATEGORIES</h2>
+      <div class="categories-grid" id="categoriesGrid">
+        <!-- Categories will be loaded here by JavaScript -->
+      </div>
+    </section>
+
+    <!-- OUR PRODUCTS -->
+    <section id="ourproducts">
+      <h2 class="main-title">OUR PRODUCTS</h2>
+
+      <div class="filter-container">
+        <button class="filter-btn active" onclick="filterProducts('all')">
+          All Products
+        </button>
+        <button class="filter-btn" onclick="filterProducts('best seller')">
+          Best Seller
+        </button>
+        <button class="filter-btn" onclick="filterProducts('new product')">
+          New Product
+        </button>
+        <button class="filter-btn" onclick="filterProducts('promo')">
+          Promo
+        </button>
+      </div>
+
+      <div class="product-section">
+        <div class="product-list" id="productList">
+          <!-- Products will be loaded here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- BEST SELLER -->
+    <section id="bestseller">
+      <h2 class="main-title">BEST SELLER</h2>
+      <div class="product-section">
+        <div class="product-list" id="bestSellerList">
+          <!-- Best seller products will be loaded here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW PRODUCT -->
+    <section id="newproduct">
+      <h2 class="main-title">NEW PRODUCT</h2>
+      <div class="product-section">
+        <div class="product-list" id="newProductList">
+          <!-- New products will be loaded here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMO -->
+    <section id="promo">
+      <h2 class="main-title">PROMO</h2>
+      <div class="product-section">
+        <div class="product-list" id="promoList">
+          <!-- Promo products will be loaded here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal detail -->
+    <div id="productModal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close" onclick="closeProductModal()">&times;</span>
+        <img id="modalImage" src="" alt="" />
+        <h2 id="modalTitle"></h2>
+        <h4 id="modalCategory"></h4>
+        <p class="price" id="modalPrice"></p>
+        <p id="modalDescription"></p>
+      </div>
+    </div>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <h2>Contact Us</h2>
+        <p>Have any questions or suggestions? We'd love to hear from you!</p>
+
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your Name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Your Email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              rows="5"
+              placeholder="Your Message"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Bibot Bikeshop - All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
